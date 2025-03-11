@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="kalkulator.html">Kalkulator</a></li>
+            <li><a href="grafik.html">Grafik</a></li>
+            <li><a href="detail.html">Detail</a></li>
+            <li><button id="logout">Logout</button></li>
+        </ul>
+    </nav>    
+
+    <section class="container">
+        <h1>Selamat Datang di Aplikasi Carbon Footprint Tracker</h1>
+        <p>Gunakan aplikasi ini untuk melacak jejak karbon Anda dan mendapatkan saran untuk menguranginya.</p>
+    </section>
+    <script src="script.js"></script>
+
+    <script>
+        if (localStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "login.html"; // Redirect ke login jika belum login
+        }
+    
+        document.getElementById("logout").addEventListener("click", function () {
+            localStorage.removeItem("loggedIn"); // Hapus status login
+            window.location.href = "login.html"; // Kembali ke halaman login
+        });      
+    </script>
+
+</body>
+</html>
